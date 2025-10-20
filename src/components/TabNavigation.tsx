@@ -20,23 +20,24 @@ const tabs = [
 export const TabNavigation = ({ activeTab, onTabChange }: TabNavigationProps) => {
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-card/95 backdrop-blur-md border-b border-border shadow-lg">
-      <div className="container mx-auto px-4">
-        <div className="flex items-center justify-between py-4">
-          <div className="flex items-center gap-3">
-            <img src="/src/assets/axam-logo.png" alt="Axam Advisory" className="h-10 w-auto" />
+      <div className="container mx-auto px-2 sm:px-4">
+        <div className="py-3 sm:py-4">
+        <div className="flex items-center justify-between gap-2 sm:gap-4">
+          <div className="flex items-center gap-2 sm:gap-3 flex-shrink-0">
+            <img src="/src/assets/axam-logo.png" alt="Axam Advisory" className="h-8 sm:h-10 w-auto" />
             <div>
-              <div className="text-xl font-bold text-foreground">AXAM</div>
+              <div className="text-lg sm:text-xl font-bold text-foreground">AXAM</div>
               <div className="text-xs text-muted-foreground hidden sm:block">Advisory</div>
             </div>
           </div>
           
-          <div className="flex gap-1 overflow-x-auto scrollbar-hide">
+          <div className="flex gap-1 overflow-x-auto scrollbar-hide flex-1 justify-end">
             {tabs.map((tab) => (
               <button
                 key={tab.id}
                 onClick={() => onTabChange(tab.id)}
                 className={cn(
-                  "px-4 py-2 rounded-lg text-sm font-medium transition-all duration-300 whitespace-nowrap",
+                  "px-2 sm:px-4 py-2 rounded-lg text-xs sm:text-sm font-medium transition-all duration-300 whitespace-nowrap",
                   activeTab === tab.id
                     ? "bg-primary text-primary-foreground shadow-glow"
                     : "text-muted-foreground hover:text-foreground hover:bg-muted"
@@ -46,6 +47,7 @@ export const TabNavigation = ({ activeTab, onTabChange }: TabNavigationProps) =>
               </button>
             ))}
           </div>
+        </div>
         </div>
       </div>
     </nav>
