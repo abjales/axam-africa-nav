@@ -1,7 +1,6 @@
 import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import heroImage from "@/assets/hero-skyline.jpg";
-import africanBadge from "@/assets/african-badge.png";
 import { TabType } from "../TabNavigation";
 
 interface HeroSectionProps {
@@ -26,11 +25,6 @@ export const HeroSection = ({ onNavigate }: HeroSectionProps) => {
 
       {/* Content */}
       <div className="relative z-10 container mx-auto px-4 text-center animate-fade-in">
-        {/* African Badge */}
-        <div className="flex justify-center mb-6">
-          <img src={africanBadge} alt="African Heritage" className="w-20 h-20 md:w-24 md:h-24 animate-fade-in opacity-90" />
-        </div>
-        
         <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight">
           Unlocking Africa's{" "}
           <span className="text-gradient">$3.4T Potential</span>
