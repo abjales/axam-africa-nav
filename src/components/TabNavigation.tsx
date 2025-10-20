@@ -23,12 +23,8 @@ export const TabNavigation = ({ activeTab, onTabChange }: TabNavigationProps) =>
       <div className="container mx-auto px-2 sm:px-4">
         <div className="py-3 sm:py-4">
         <div className="flex items-center justify-between gap-2 sm:gap-4">
-          <div className="flex items-center gap-2 sm:gap-3 flex-shrink-0">
+          <div className="flex items-center flex-shrink-0">
             <img src="/src/assets/axam-logo.png" alt="Axam Advisory" className="h-8 sm:h-10 w-auto" />
-            <div>
-              <div className="text-lg sm:text-xl font-bold text-foreground">AXAM</div>
-              <div className="text-xs text-muted-foreground hidden sm:block">Advisory</div>
-            </div>
           </div>
           
           <div className="flex gap-1 overflow-x-auto scrollbar-hide flex-1 justify-end">
