@@ -22,9 +22,12 @@ export const TabNavigation = ({ activeTab, onTabChange }: TabNavigationProps) =>
     <nav className="fixed top-0 left-0 right-0 z-50 bg-card/95 backdrop-blur-md border-b border-border shadow-lg">
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between py-4">
-          <div className="flex items-center gap-2">
-            <div className="text-2xl font-bold text-gradient">AXAM</div>
-            <div className="text-sm text-muted-foreground hidden sm:block">Advisory</div>
+          <div className="flex items-center gap-3">
+            <img src="/src/assets/axam-logo.png" alt="Axam Advisory" className="h-10 w-auto" />
+            <div>
+              <div className="text-xl font-bold text-foreground">AXAM</div>
+              <div className="text-xs text-muted-foreground hidden sm:block">Advisory</div>
+            </div>
           </div>
           
           <div className="flex gap-1 overflow-x-auto scrollbar-hide">
