@@ -5,6 +5,15 @@ import { Textarea } from "@/components/ui/textarea";
 import { Card, CardContent } from "@/components/ui/card";
 import { useState } from "react";
 import { useToast } from "@/hooks/use-toast";
+import { supabase } from "@/integrations/supabase/client";
+import { z } from "zod";
+
+const contactSchema = z.object({
+  name: z.string().trim().min(1, "Name is required").max(100, "Name must be less than 100 characters"),
+  email: z.string().trim().email("Invalid email address").max(255, "Email must be less than 255 characters"),
+  phone: z.string().trim().max(20, "Phone number must be less than 20 characters").optional(),
+  message: z.string().trim().min(1, "Message is required").max(1000, "Message must be less than 1000 characters"),
+});
 
 export const ContactSection = () => {
   const { toast } = useToast();
@@ -14,28 +23,52 @@ export const ContactSection = () => {
     phone: "",
     message: "",
   });
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    setIsSubmitting(true);
     
-    // Basic validation
-    if (!formData.name || !formData.email || !formData.message) {
+    try {
+      // Validate form data
+      const validatedData = contactSchema.parse(formData);
+
+      // Insert into database
+      const { error } = await supabase
+        .from('contact_messages')
+        .insert({
+          name: validatedData.name,
+          email: validatedData.email,
+          phone: validatedData.phone || null,
+          message: validatedData.message,
+        });
+
+      if (error) throw error;
+
       toast({
-        title: "Missing Information",
-        description: "Please fill in all required fields.",
-        variant: "destructive",
+        title: "Message Sent!",
+        description: "We'll get back to you within 24 hours.",
       });
-      return;
+
+      // Reset form
+      setFormData({ name: "", email: "", phone: "", message: "" });
+    } catch (error) {
+      if (error instanceof z.ZodError) {
+        toast({
+          title: "Validation Error",
+          description: error.errors[0].message,
+          variant: "destructive",
+        });
+      } else {
+        toast({
+          title: "Error",
+          description: "Failed to send message. Please try again.",
+          variant: "destructive",
+        });
+      }
+    } finally {
+      setIsSubmitting(false);
     }
-
-    // Here you would typically send the form data to a backend
-    toast({
-      title: "Message Sent!",
-      description: "We'll get back to you within 24 hours.",
-    });
-
-    // Reset form
-    setFormData({ name: "", email: "", phone: "", message: "" });
   };
 
   return (
@@ -174,8 +207,9 @@ export const ContactSection = () => {
                   type="submit"
                   className="w-full bg-primary hover:bg-primary/90 text-primary-foreground shadow-glow"
                   size="lg"
+                  disabled={isSubmitting}
                 >
-                  Send Message
+                  {isSubmitting ? "Sending..." : "Send Message"}
                   <Send className="ml-2 h-5 w-5" />
                 </Button>
               </form>
