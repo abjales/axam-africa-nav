@@ -23,14 +23,17 @@ export const TabNavigation = ({ activeTab, onTabChange }: TabNavigationProps) =>
       <div className="w-full px-1 sm:px-4">
         <div className="py-1.5 sm:py-3">
           <div className="flex items-center justify-between gap-1 sm:gap-2">
-            {/* Logo */}
-            <div className="flex-shrink-0">
+            {/* Logo - acts as Home button on mobile */}
+            <button 
+              onClick={() => onTabChange("home")}
+              className="flex-shrink-0 md:pointer-events-none"
+            >
               <img 
                 src="/src/assets/axam-logo.png" 
                 alt="Axam Advisory" 
                 className="h-6 sm:h-10 w-auto" 
               />
-            </div>
+            </button>
             
             {/* Navigation Tabs */}
             <div className="flex gap-0.5 sm:gap-1 overflow-x-auto scrollbar-hide flex-1 justify-end">
@@ -40,6 +43,7 @@ export const TabNavigation = ({ activeTab, onTabChange }: TabNavigationProps) =>
                   onClick={() => onTabChange(tab.id)}
                   className={cn(
                     "px-1 sm:px-3 py-1 sm:py-2 rounded text-[8px] sm:text-xs font-medium transition-all duration-300 whitespace-nowrap flex-shrink-0",
+                    tab.id === "home" && "hidden md:inline-block",
                     activeTab === tab.id
                       ? "bg-primary text-primary-foreground shadow-glow"
                       : "text-muted-foreground hover:text-foreground hover:bg-muted"
