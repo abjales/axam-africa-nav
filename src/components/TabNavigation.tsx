@@ -20,23 +20,35 @@ const tabs = [
 export const TabNavigation = ({ activeTab, onTabChange }: TabNavigationProps) => {
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-card/95 backdrop-blur-md border-b border-border shadow-lg">
-      <div className="w-full px-1 sm:px-2">
+      <div className="w-full px-2 sm:px-4">
         <div className="py-2 sm:py-3">
-          <div className="flex justify-between items-stretch gap-0.5 sm:gap-1">
-            {tabs.map((tab) => (
-              <button
-                key={tab.id}
-                onClick={() => onTabChange(tab.id)}
-                className={cn(
-                  "flex-1 px-1 sm:px-2 py-1.5 sm:py-2 rounded-md text-[10px] sm:text-xs font-medium transition-all duration-300 whitespace-nowrap",
-                  activeTab === tab.id
-                    ? "bg-primary text-primary-foreground shadow-glow"
-                    : "text-muted-foreground hover:text-foreground hover:bg-muted"
-                )}
-              >
-                {tab.label}
-              </button>
-            ))}
+          <div className="flex items-center justify-between gap-2">
+            {/* Logo */}
+            <div className="flex-shrink-0">
+              <img 
+                src="/src/assets/axam-logo.png" 
+                alt="Axam Advisory" 
+                className="h-8 sm:h-10 w-auto" 
+              />
+            </div>
+            
+            {/* Navigation Tabs */}
+            <div className="flex gap-0.5 sm:gap-1 overflow-x-auto scrollbar-hide">
+              {tabs.map((tab) => (
+                <button
+                  key={tab.id}
+                  onClick={() => onTabChange(tab.id)}
+                  className={cn(
+                    "px-1.5 sm:px-3 py-1.5 sm:py-2 rounded-md text-[9px] sm:text-xs font-medium transition-all duration-300 whitespace-nowrap flex-shrink-0",
+                    activeTab === tab.id
+                      ? "bg-primary text-primary-foreground shadow-glow"
+                      : "text-muted-foreground hover:text-foreground hover:bg-muted"
+                  )}
+                >
+                  {tab.label}
+                </button>
+              ))}
+            </div>
           </div>
         </div>
       </div>
