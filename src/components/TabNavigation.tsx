@@ -20,16 +20,15 @@ const tabs = [
 export const TabNavigation = ({ activeTab, onTabChange }: TabNavigationProps) => {
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-card/95 backdrop-blur-md border-b border-border shadow-lg">
-      <div className="container mx-auto px-2 sm:px-4">
-        <div className="py-3 sm:py-4">
-        <div className="flex items-center justify-end gap-2 sm:gap-4">
-          <div className="flex gap-1 overflow-x-auto scrollbar-hide flex-1 justify-end">
+      <div className="w-full px-2 sm:px-4">
+        <div className="py-2 sm:py-3">
+          <div className="flex gap-0.5 sm:gap-1 overflow-x-auto scrollbar-hide justify-center">
             {tabs.map((tab) => (
               <button
                 key={tab.id}
                 onClick={() => onTabChange(tab.id)}
                 className={cn(
-                  "px-2 sm:px-4 py-2 rounded-lg text-xs sm:text-sm font-medium transition-all duration-300 whitespace-nowrap",
+                  "px-1.5 sm:px-3 py-1.5 sm:py-2 rounded-md text-[10px] sm:text-xs font-medium transition-all duration-300 whitespace-nowrap flex-shrink-0",
                   activeTab === tab.id
                     ? "bg-primary text-primary-foreground shadow-glow"
                     : "text-muted-foreground hover:text-foreground hover:bg-muted"
@@ -39,7 +38,6 @@ export const TabNavigation = ({ activeTab, onTabChange }: TabNavigationProps) =>
               </button>
             ))}
           </div>
-        </div>
         </div>
       </div>
     </nav>
