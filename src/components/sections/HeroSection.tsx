@@ -3,24 +3,20 @@ import { Button } from "@/components/ui/button";
 import heroImage from "@/assets/hero-skyline.jpg";
 import africanBadge from "@/assets/african-badge.png";
 import { TabType } from "../TabNavigation";
-
 interface HeroSectionProps {
   onNavigate: (tab: TabType) => void;
 }
-
-export const HeroSection = ({ onNavigate }: HeroSectionProps) => {
-  return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+export const HeroSection = ({
+  onNavigate
+}: HeroSectionProps) => {
+  return <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Background Image with Overlay */}
-      <div 
-        className="absolute inset-0 z-0"
-        style={{
-          backgroundImage: `url(${heroImage})`,
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-          backgroundRepeat: 'no-repeat',
-        }}
-      >
+      <div className="absolute inset-0 z-0" style={{
+      backgroundImage: `url(${heroImage})`,
+      backgroundSize: 'cover',
+      backgroundPosition: 'center',
+      backgroundRepeat: 'no-repeat'
+    }}>
         <div className="absolute inset-0 gradient-hero opacity-90"></div>
       </div>
 
@@ -28,11 +24,7 @@ export const HeroSection = ({ onNavigate }: HeroSectionProps) => {
       <div className="relative z-10 container mx-auto px-4 text-center animate-fade-in">
         {/* African Badge */}
         <div className="flex justify-center mb-6">
-          <img 
-            src={africanBadge} 
-            alt="African heritage symbol" 
-            className="w-20 h-20 md:w-24 md:h-24 animate-fade-in opacity-90"
-          />
+          
         </div>
 
         <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight">
@@ -45,11 +37,7 @@ export const HeroSection = ({ onNavigate }: HeroSectionProps) => {
           landscape with confidence and local expertise.
         </p>
 
-        <Button 
-          size="lg"
-          onClick={() => onNavigate("about")}
-          className="bg-primary hover:bg-primary/90 text-primary-foreground shadow-glow text-lg px-8 py-6 rounded-full group"
-        >
+        <Button size="lg" onClick={() => onNavigate("about")} className="bg-primary hover:bg-primary/90 text-primary-foreground shadow-glow text-lg px-8 py-6 rounded-full group">
           Learn More
           <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
         </Button>
@@ -66,6 +54,5 @@ export const HeroSection = ({ onNavigate }: HeroSectionProps) => {
           <div className="w-1 h-3 bg-primary rounded-full mt-2 animate-glow"></div>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
