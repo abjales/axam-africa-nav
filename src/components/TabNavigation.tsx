@@ -22,11 +22,7 @@ export const TabNavigation = ({ activeTab, onTabChange }: TabNavigationProps) =>
     <nav className="fixed top-0 left-0 right-0 z-50 bg-card/95 backdrop-blur-md border-b border-border shadow-lg">
       <div className="container mx-auto px-2 sm:px-4">
         <div className="py-3 sm:py-4">
-        <div className="flex items-center justify-between gap-2 sm:gap-4">
-          <div className="flex items-center flex-shrink-0">
-            <img src="/src/assets/axam-logo.png" alt="Axam Advisory" className="h-12 sm:h-14 w-auto" />
-          </div>
-          
+        <div className="flex items-center justify-end gap-2 sm:gap-4">
           <div className="flex gap-1 overflow-x-auto scrollbar-hide flex-1 justify-end">
             {tabs.map((tab) => (
               <button
