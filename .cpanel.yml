@@ -1,8 +1,7 @@
 ---
 deployment:
-  deployment:
   tasks:
     - export DEPLOYPATH=/home/fpufutm/public_html/
     - /bin/cp -R dist/* $DEPLOYPATH
-   
+    - /bin/cp .htaccess $DEPLOYPATH
 ---
