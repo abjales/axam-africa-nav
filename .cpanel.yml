@@ -1,7 +1,10 @@
+
 ---
 deployment:
   tasks:
-    - export DEPLOYPATH=/home/fpufutm/public_html/
+    - export DEPLOYPATH=/home/fpufutmr/public_html/
+    - npm install
+    - npm run build
     - /bin/cp -R dist/* $DEPLOYPATH
     - /bin/cp .htaccess $DEPLOYPATH
 ---
