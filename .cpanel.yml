@@ -1,9 +1,8 @@
 ---
 deployment:
+  deployment:
   tasks:
-    - current_branch=$(git branch --show-current) # set current branch to variable
-    - if [ $current_branch == "main" ]; then export DEPLOYPATH=/home/fpufutm/public_html/xyz/; fi;
-    - if [ $current_branch == "develop" ]; then export DEPLOYPATH=/home/fpufutm/public_html/xyz_dev/; fi;
-    - /bin/cp -R * $DEPLOYPATH
+    - export DEPLOYPATH=/home/fpufutm/public_html/
+    - /bin/cp -R dist/* $DEPLOYPATH
    
 ---
