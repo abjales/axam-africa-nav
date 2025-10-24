@@ -32,7 +32,7 @@ export const TabNavigation = ({ activeTab, onTabChange }: TabNavigationProps) =>
               <img 
                 src={axamLogo} 
                 alt="Axam Advisory" 
-                className="h-6 sm:h-10 w-auto" 
+                className="h-10 sm:h-14 md:h-16 w-auto" 
               />
             </button>
             
