@@ -16,6 +16,7 @@ export const HeroSection = ({
           src={heroImage} 
           alt="African cityscape skyline representing economic growth and business opportunities" 
           className="w-full h-full object-cover"
+          fetchPriority="high"
         />
         <div className="absolute inset-0 gradient-hero opacity-90"></div>
       </div>
