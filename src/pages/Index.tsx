@@ -54,7 +54,7 @@ const Index = () => {
             </div>
             <div className="text-sm text-muted-foreground text-center md:text-right">
               <p>© 2025 Axam Advisory. All rights reserved.</p>
-              <p className="mt-1">Nairobi, Kenya | East Africa's Gateway</p>
+              <p className="mt-1">Nairobi, Kenya |Africa's Gateway</p>
             </div>
           </div>
         </div>
