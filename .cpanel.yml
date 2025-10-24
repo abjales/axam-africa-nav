@@ -7,4 +7,5 @@ deployment:
     - npm run build
     - /bin/cp -R dist/* $DEPLOYPATH
     - /bin/cp .htaccess $DEPLOYPATH
+    - /bin/cp public/sitemap.xml $DEPLOYPATH
 ---

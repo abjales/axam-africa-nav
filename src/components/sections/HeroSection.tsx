@@ -11,20 +11,24 @@ export const HeroSection = ({
 }: HeroSectionProps) => {
   return <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Background Image with Overlay */}
-      <div className="absolute inset-0 z-0" style={{
-      backgroundImage: `url(${heroImage})`,
-      backgroundSize: 'cover',
-      backgroundPosition: 'center',
-      backgroundRepeat: 'no-repeat'
-    }}>
+      <div className="absolute inset-0 z-0">
+        <img 
+          src={heroImage} 
+          alt="African cityscape skyline representing economic growth and business opportunities" 
+          className="w-full h-full object-cover"
+        />
         <div className="absolute inset-0 gradient-hero opacity-90"></div>
       </div>
 
       {/* Content */}
-      <div className="relative z-10 container mx-auto px-4 text-center animate-fade-in">
+      <header className="relative z-10 container mx-auto px-4 text-center animate-fade-in">
         {/* African Badge */}
         <div className="flex justify-center mb-6">
-          
+          <img 
+            src={africanBadge} 
+            alt="African continent badge representing local expertise and market knowledge" 
+            className="w-16 h-16 md:w-20 md:h-20 animate-float"
+          />
         </div>
 
         <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight">
@@ -46,7 +50,7 @@ export const HeroSection = ({
         <div className="mt-16 flex justify-center">
           <div className="w-32 h-1 gradient-accent rounded-full animate-glow"></div>
         </div>
-      </div>
+      </header>
 
       {/* Scroll indicator */}
       <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
