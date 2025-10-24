@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { cn } from "@/lib/utils";
+import axamLogo from "@/assets/axam-logo.png";
 
 export type TabType = "home" | "about" | "services" | "insights" | "risks" | "contact";
 
@@ -29,7 +30,7 @@ export const TabNavigation = ({ activeTab, onTabChange }: TabNavigationProps) =>
               className="flex-shrink-0 md:pointer-events-none"
             >
               <img 
-                src="/src/assets/axam-logo.png" 
+                src={axamLogo} 
                 alt="Axam Advisory" 
                 className="h-6 sm:h-10 w-auto" 
               />
