@@ -21,10 +21,10 @@ const pillars = [
 
 export const AboutSection = () => {
   return (
-    <section className="min-h-screen py-24 px-4">
+    <section className="min-h-screen py-24 px-4" aria-labelledby="about-heading">
       <div className="container mx-auto max-w-6xl">
         <div className="text-center mb-16 animate-fade-in">
-          <h2 className="text-4xl md:text-5xl font-bold mb-6">
+          <h2 id="about-heading" className="text-4xl md:text-5xl font-bold mb-6">
             About <span className="text-gradient">Axam Advisory</span>
           </h2>
           <div className="space-y-6 text-lg text-muted-foreground max-w-3xl mx-auto">
@@ -46,7 +46,7 @@ export const AboutSection = () => {
               style={{ animationDelay: `${index * 150}ms` }}
             >
               <CardContent className="p-6 text-center">
-                <div className="mb-4 inline-flex p-4 rounded-full bg-primary/10">
+                <div className="mb-4 inline-flex p-4 rounded-full bg-primary/10" aria-hidden="true">
                   <pillar.icon className="h-8 w-8 text-primary" />
                 </div>
                 <h3 className="text-xl font-semibold mb-3">{pillar.title}</h3>

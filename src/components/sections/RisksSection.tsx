@@ -51,10 +51,10 @@ const opportunities = [
 
 export const RisksSection = () => {
   return (
-    <section className="min-h-screen py-24 px-4">
+    <section className="min-h-screen py-24 px-4" aria-labelledby="risks-heading">
       <div className="container mx-auto max-w-6xl">
         <div className="text-center mb-16 animate-fade-in">
-          <h2 className="text-4xl md:text-5xl font-bold mb-6">
+          <h2 id="risks-heading" className="text-4xl md:text-5xl font-bold mb-6">
             Risk & <span className="text-gradient">Opportunities</span>
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
@@ -67,7 +67,7 @@ export const RisksSection = () => {
           <Card className="bg-card border-border animate-slide-up">
             <CardHeader>
               <CardTitle className="flex items-center gap-2">
-                <AlertTriangle className="h-6 w-6 text-primary" />
+                <AlertTriangle className="h-6 w-6 text-primary" aria-hidden="true" />
                 Strategic Risk Management
               </CardTitle>
             </CardHeader>
@@ -91,14 +91,14 @@ export const RisksSection = () => {
           <Card className="bg-card border-border animate-slide-up" style={{ animationDelay: "150ms" }}>
             <CardHeader>
               <CardTitle className="flex items-center gap-2">
-                <TrendingUp className="h-6 w-6 text-secondary" />
+                <TrendingUp className="h-6 w-6 text-secondary" aria-hidden="true" />
                 High-Growth Sectors
               </CardTitle>
             </CardHeader>
             <CardContent className="space-y-4">
               {opportunities.map((opp, index) => (
                 <div key={opp.title} className="flex gap-3">
-                  <div className="flex-shrink-0 p-2 rounded-lg bg-secondary/10">
+                  <div className="flex-shrink-0 p-2 rounded-lg bg-secondary/10" aria-hidden="true">
                     <opp.icon className="h-5 w-5 text-secondary" />
                   </div>
                   <div>
@@ -116,7 +116,7 @@ export const RisksSection = () => {
           <div className="grid md:grid-cols-2">
             <div className="p-8">
               <div className="flex items-center gap-2 mb-4">
-                <MapPin className="h-6 w-6 text-primary" />
+                <MapPin className="h-6 w-6 text-primary" aria-hidden="true" />
                 <h3 className="text-2xl font-bold">Nairobi: Gateway to Africa</h3>
               </div>
               <ul className="space-y-3 text-muted-foreground">

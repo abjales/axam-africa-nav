@@ -74,10 +74,10 @@ export const InsightsSection = () => {
   }, []);
 
   return (
-    <section ref={sectionRef} className="min-h-screen py-24 px-4">
+    <section ref={sectionRef} className="min-h-screen py-24 px-4" aria-labelledby="insights-heading">
       <div className="container mx-auto max-w-6xl">
         <div className="text-center mb-16 animate-fade-in">
-          <h2 className="text-4xl md:text-5xl font-bold mb-6">
+          <h2 id="insights-heading" className="text-4xl md:text-5xl font-bold mb-6">
             Market <span className="text-gradient">Insights</span>
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
@@ -96,7 +96,7 @@ export const InsightsSection = () => {
               style={{ animationDelay: `${index * 100}ms` }}
             >
               <CardContent className="p-6 text-center">
-                <stat.icon className={`h-8 w-8 ${stat.color} mx-auto mb-4`} />
+                <stat.icon className={`h-8 w-8 ${stat.color} mx-auto mb-4`} aria-hidden="true" />
                 <div className="text-3xl font-bold mb-2">{stat.value}</div>
                 <div className="text-sm text-muted-foreground">{stat.label}</div>
               </CardContent>

@@ -28,10 +28,11 @@ export const TabNavigation = ({ activeTab, onTabChange }: TabNavigationProps) =>
             <button 
               onClick={() => onTabChange("home")}
               className="flex-shrink-0 md:pointer-events-none"
+              aria-label="Axam Advisory Home - Navigate to homepage"
             >
               <img 
                 src={axamLogo} 
-                alt="Axam Advisory" 
+                alt="Axam Advisory logo - Africa business consulting and market entry experts" 
                 className="h-10 sm:h-14 md:h-16 w-auto" 
               />
             </button>

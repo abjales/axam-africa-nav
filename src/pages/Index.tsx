@@ -38,12 +38,12 @@ const Index = () => {
   return (
     <div className="min-h-screen">
       <TabNavigation activeTab={activeTab} onTabChange={handleTabChange} />
-      <main className="pt-20">
+      <main className="pt-20" role="main">
         {renderContent()}
       </main>
       
       {/* Footer */}
-      <footer className="border-t border-border bg-card/50 backdrop-blur-sm">
+      <footer className="border-t border-border bg-card/50 backdrop-blur-sm" role="contentinfo">
         <div className="container mx-auto px-4 py-8">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <div className="text-center md:text-left">

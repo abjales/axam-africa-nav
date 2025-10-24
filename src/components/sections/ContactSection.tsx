@@ -72,11 +72,11 @@ export const ContactSection = () => {
   };
 
   return (
-    <section className="min-h-screen py-24 px-4">
+    <section className="min-h-screen py-24 px-4" aria-labelledby="contact-heading">
       <div className="container mx-auto max-w-6xl">
         {/* CTA Banner */}
         <div className="text-center mb-16 animate-fade-in">
-          <h2 className="text-4xl md:text-5xl font-bold mb-6">
+          <h2 id="contact-heading" className="text-4xl md:text-5xl font-bold mb-6">
             Partner with <span className="text-gradient">Axam Advisory</span>
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
@@ -90,7 +90,7 @@ export const ContactSection = () => {
             <Card className="bg-card border-border hover:border-primary transition-colors">
               <CardContent className="p-6">
                 <div className="flex items-center gap-4 mb-4">
-                  <div className="p-3 rounded-full bg-primary/10">
+                  <div className="p-3 rounded-full bg-primary/10" aria-hidden="true">
                     <Globe className="h-6 w-6 text-primary" />
                   </div>
                   <div>
@@ -111,7 +111,7 @@ export const ContactSection = () => {
             <Card className="bg-card border-border hover:border-primary transition-colors">
               <CardContent className="p-6">
                 <div className="flex items-center gap-4 mb-4">
-                  <div className="p-3 rounded-full bg-secondary/10">
+                  <div className="p-3 rounded-full bg-secondary/10" aria-hidden="true">
                     <Mail className="h-6 w-6 text-secondary" />
                   </div>
                   <div>
@@ -130,7 +130,7 @@ export const ContactSection = () => {
             <Card className="bg-card border-border hover:border-primary transition-colors">
               <CardContent className="p-6">
                 <div className="flex items-center gap-4 mb-4">
-                  <div className="p-3 rounded-full bg-primary/10">
+                  <div className="p-3 rounded-full bg-primary/10" aria-hidden="true">
                     <Phone className="h-6 w-6 text-primary" />
                   </div>
                   <div>
@@ -208,9 +208,10 @@ export const ContactSection = () => {
                   className="w-full bg-primary hover:bg-primary/90 text-primary-foreground shadow-glow"
                   size="lg"
                   disabled={isSubmitting}
+                  aria-label={isSubmitting ? "Sending message" : "Send message to Axam Advisory"}
                 >
                   {isSubmitting ? "Sending..." : "Send Message"}
-                  <Send className="ml-2 h-5 w-5" />
+                  <Send className="ml-2 h-5 w-5" aria-hidden="true" />
                 </Button>
               </form>
             </CardContent>

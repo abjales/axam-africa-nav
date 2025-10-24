@@ -77,10 +77,10 @@ const services = [
 
 export const ServicesSection = () => {
   return (
-    <section className="min-h-screen py-24 px-4">
+    <section className="min-h-screen py-24 px-4" aria-labelledby="services-heading">
       <div className="container mx-auto max-w-4xl">
         <div className="text-center mb-16 animate-fade-in">
-          <h2 className="text-4xl md:text-5xl font-bold mb-6">
+          <h2 id="services-heading" className="text-4xl md:text-5xl font-bold mb-6">
             Core <span className="text-gradient">Services</span>
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
@@ -96,9 +96,9 @@ export const ServicesSection = () => {
               className="bg-card border border-border rounded-lg overflow-hidden hover:border-primary transition-colors animate-slide-up"
               style={{ animationDelay: `${index * 100}ms` }}
             >
-              <AccordionTrigger className="px-6 py-4 hover:no-underline">
+              <AccordionTrigger className="px-6 py-4 hover:no-underline" aria-label={`Expand details for ${service.title}`}>
                 <div className="flex items-center gap-4 text-left">
-                  <div className="flex-shrink-0 p-3 rounded-lg bg-primary/10">
+                  <div className="flex-shrink-0 p-3 rounded-lg bg-primary/10" aria-hidden="true">
                     <service.icon className="h-6 w-6 text-primary" />
                   </div>
                   <div>

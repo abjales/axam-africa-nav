@@ -9,12 +9,12 @@ interface HeroSectionProps {
 export const HeroSection = ({
   onNavigate
 }: HeroSectionProps) => {
-  return <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+  return <section className="relative min-h-screen flex items-center justify-center overflow-hidden" aria-label="Hero section - Unlocking Africa's economic potential">
       {/* Background Image with Overlay */}
-      <div className="absolute inset-0 z-0">
+      <div className="absolute inset-0 z-0" aria-hidden="true">
         <img 
           src={heroImage} 
-          alt="African cityscape skyline representing economic growth and business opportunities" 
+          alt="Modern African cityscape skyline representing economic growth, business opportunities, and urban development across the continent" 
           className="w-full h-full object-cover"
         />
         <div className="absolute inset-0 gradient-hero opacity-90"></div>
@@ -26,7 +26,7 @@ export const HeroSection = ({
         <div className="flex justify-center mb-6">
           <img 
             src={africanBadge} 
-            alt="African continent badge representing local expertise and market knowledge" 
+            alt="African continent emblem symbolizing local expertise, regional knowledge, and comprehensive market understanding across 54 nations" 
             className="w-16 h-16 md:w-20 md:h-20 animate-float"
           />
         </div>
@@ -41,19 +41,19 @@ export const HeroSection = ({
           landscape with confidence and local expertise.
         </p>
 
-        <Button size="lg" onClick={() => onNavigate("about")} className="bg-primary hover:bg-primary/90 text-primary-foreground shadow-glow text-lg px-8 py-6 rounded-full group">
+        <Button size="lg" onClick={() => onNavigate("about")} className="bg-primary hover:bg-primary/90 text-primary-foreground shadow-glow text-lg px-8 py-6 rounded-full group" aria-label="Learn more about Axam Advisory services">
           Learn More
-          <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
+          <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" aria-hidden="true" />
         </Button>
 
         {/* Animated gradient line */}
-        <div className="mt-16 flex justify-center">
+        <div className="mt-16 flex justify-center" aria-hidden="true">
           <div className="w-32 h-1 gradient-accent rounded-full animate-glow"></div>
         </div>
       </header>
 
       {/* Scroll indicator */}
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
+      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce" aria-hidden="true">
         <div className="w-6 h-10 border-2 border-primary rounded-full flex justify-center">
           <div className="w-1 h-3 bg-primary rounded-full mt-2 animate-glow"></div>
         </div>
